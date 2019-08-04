@@ -1,0 +1,8 @@
+# container is live but don't send any traffic to the pod before this condition pass
+readinessProbe:
+  exec:
+    command:
+    - cat
+    - /tmp/healthy
+  initialDelaySeconds: 5
+  periodSeconds: 5

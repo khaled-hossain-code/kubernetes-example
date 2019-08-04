@@ -1,0 +1,13 @@
+# to provide environment variable inside pod
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-config
+  namespace: default
+data:
+  SECRET: abcd
+  TEXT1: Customer1_Company
+  TEXT2: Welcomes You
+  COMPANY: Customer1 Company Technology Pct. Ltd.
+
+# kubectl create -f config-maps.yaml

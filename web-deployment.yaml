@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webserver
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
+# kubectl create -f web-deployment.yaml
+# see pods log: kubectl describe pod <pod's name>
+# env:
+        # - name: SPECIFIC_ENV_VAR1
+          # valueFrom:
+            # configMapKeyRef:
+              # name: config-map-1
+              # key: SPECIFIC_DATA
