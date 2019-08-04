@@ -11,3 +11,18 @@ spec:
     targetPort: 80
     nodePort: 30080 #nodeport has to be above 30,000
   type: NodePort #ClusterIP for internal services
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: queue-service
+spec:
+  selector:
+    app: queue
+    release: 'release1'
+  ports:
+  - port: 8161
+    targetPort: 8161
+    nodePort: 30010
+  type: NodePort
