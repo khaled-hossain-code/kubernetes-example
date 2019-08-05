@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: ReplicaSet #deployment is better than replicaSet
 metadata:
   name: webapp
 spec:

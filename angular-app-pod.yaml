@@ -9,7 +9,7 @@ metadata:
 spec:
   containers:
   - name: angular-fleet-app
-    image: richardchesterwood/k8s-fleetman-webapp-angular:release0-5
+    image: richardchesterwood/k8s-fleetman-webapp-angular:release0
     resources:
       limits:
         memory: "128Mi"

@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+spec:
+  minReadySeconds: 10
+  selector:
+    matchLabels:
+      app: webapp
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: angular-fleet-app
+        image: richardchesterwood/k8s-fleetman-webapp-angular:release0
